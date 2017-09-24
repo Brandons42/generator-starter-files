@@ -59,7 +59,7 @@ module.exports = class extends Generator {
 
   writing() {
 
-    const ignored;
+    let ignored;
     if ((bower && yarn) || (bower && npm)) {
       ignored = "bower_components\nnode_modules";
     }
