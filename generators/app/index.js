@@ -58,10 +58,24 @@ module.exports = class extends Generator {
   }
 
   writing() {
+
+    const ignored;
+    if ((bower && yarn) || (bower && npm)) {
+      ignored = "bower_components\nnode_modules";
+    }
+    else if (yarn || npm) {
+      ignored = "node_modules";
+    }
+    else if (bower) {
+      ignored = "bower_components";
+    }
+
     this.fs.copy(
       this.templatePath('*'),
-      this.destinationPath('./')
-    );
+      this.destinationPath('./'), {
+        ignored: ignored
+    });
+
   }
 
   install() {
