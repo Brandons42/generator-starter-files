@@ -4,6 +4,34 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 
 module.exports = class extends Generator {
+
+  constructor(args, opts) {
+
+    super(args, opts);
+
+    this.option('bower', {
+      alias: 'b',
+      default: false,
+      desc: 'Use Bower for dependency management',
+      type: String
+    });
+
+    this.option('npm', {
+      alias: 'n',
+      default: false,
+      desc: 'Use NPM for dependency management',
+      type: String
+    });
+
+    this.option('yarn', {
+      alias: 'y',
+      default: true,
+      desc: 'Use Yarn for dependency management',
+      type: String
+    });
+
+  }
+
   prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
@@ -25,12 +53,16 @@ module.exports = class extends Generator {
 
   writing() {
     this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+      this.templatePath('*'),
+      this.destinationPath('./')
     );
   }
 
   install() {
-    this.installDependencies();
+    this.installDependencies({
+      bower: this.options.bower,
+      npm: this.options.npm,
+      yarn: this.options.yarn
+    });
   }
 };
