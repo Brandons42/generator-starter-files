@@ -32,6 +32,12 @@ module.exports = class extends Generator {
 
   }
 
+  initializing() {
+
+    this.composeWith(require.resolve('generator-gitattributes/generators/app'));
+
+  }
+
   prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
