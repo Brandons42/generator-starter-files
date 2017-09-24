@@ -34,7 +34,7 @@ module.exports = class extends Generator {
 
   initializing() {
 
-    this.composeWith(require.resolve('generator-gitattributes/generators/app'));
+    this.composeWith(require.resolve('generator-gitattributes/app'));
 
   }
 
