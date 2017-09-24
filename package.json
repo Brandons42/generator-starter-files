@@ -1,8 +1,8 @@
 {
   "name": "generator-starter-files",
   "version": "0.0.0",
-  "description": "A generator to get your project up and running as quick as possible",
-  "homepage": "",
+  "description": "A Yeoman generator to get your project up and running as quick as possible",
+  "homepage": "https://github.com/Brandons42/generator-starter-files.git",
   "author": {
     "name": "Brandon Suen",
     "url": "https://brandons42.github.io/personal_website/"
@@ -43,6 +43,5 @@
       "node": true
     }
   },
-  "repository": "brandons42/generator-starter-files",
-  "private": true
+  "repository": "brandons42/generator-starter-files"
 }
