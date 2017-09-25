@@ -11,21 +11,18 @@ module.exports = class extends Generator {
 
     this.option('bower', {
       alias: 'b',
-      default: false,
       desc: 'Use Bower for dependency management',
       type: String
     });
 
     this.option('npm', {
       alias: 'n',
-      default: false,
       desc: 'Use NPM for dependency management',
       type: String
     });
 
-    this.option('yarn', {
-      alias: 'y',
-      default: true,
+    this.option('noYarn', {
+      alias: 'ny',
       desc: 'Use Yarn for dependency management',
       type: String
     });
@@ -34,7 +31,7 @@ module.exports = class extends Generator {
 
   initializing() {
 
-    this.composeWith(require.resolve('generator-gitattributes/app'));
+    //this.composeWith(require.resolve('generator-gitattributes/app'));
 
   }
 
@@ -60,19 +57,19 @@ module.exports = class extends Generator {
   writing() {
 
     let ignored;
-    if ((bower && yarn) || (bower && npm)) {
+    if ((!!(this.options.bower) && !(this.options.noYarn)) || (!!(this.options.bower) && !!(this.options.npm))) {
       ignored = "bower_components\nnode_modules";
     }
-    else if (yarn || npm) {
+    else if (!(this.options.noYarn) || !!(this.options.npm)) {
       ignored = "node_modules";
     }
-    else if (bower) {
+    else if (!!(this.options.bower)) {
       ignored = "bower_components";
     }
 
     this.fs.copy(
-      this.templatePath('*'),
-      this.destinationPath('./'), {
+      this.templatePath('gitignore'),
+      this.destinationPath('./.gitignore'), {
         ignored: ignored
     });
 
@@ -80,9 +77,9 @@ module.exports = class extends Generator {
 
   install() {
     this.installDependencies({
-      bower: this.options.bower,
-      npm: this.options.npm,
-      yarn: this.options.yarn
+      bower: !!(this.options.bower),
+      npm: !!(this.options.npm),
+      yarn: !(this.options.noYarn)
     });
   }
 };
