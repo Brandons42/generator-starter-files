@@ -25,6 +25,11 @@ module.exports = class extends Generator {
       this.destinationPath('./.gitattributes')
     );
 
+    this.fs.copy(
+      this.templatePath('editorconfig'),
+      this.destinationPath('./.editorconfig')
+    );
+
   }
 
 };
