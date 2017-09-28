@@ -1,6 +1,8 @@
 # generator-starter-files [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > A generator to get your project up and running as quick as possible
 
+generator-starter-files is a Yeoman generator that will generate the following files for you: .gitattributes, .editorconfig, and .gitignore. This was created for the main purpose of running it alongside by other generators, but feel free to use it as you please!
+
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and generator-starter-files using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
