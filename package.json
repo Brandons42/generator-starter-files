@@ -12,7 +12,10 @@
   ],
   "main": "generators/app/index.js",
   "keywords": [
-    "yeoman-generator", ".gitattributes", ".editorconfig", ".gitignore"
+    "yeoman-generator",
+    ".gitattributes",
+    ".editorconfig",
+    ".gitignore"
   ],
   "devDependencies": {
     "eslint": "^4.1.0",
