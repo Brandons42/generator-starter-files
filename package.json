@@ -2,6 +2,7 @@
   "name": "generator-starter-files",
   "version": "1.0.1",
   "description": "A Yeoman generator to get your project up and running as quick as possible",
+  "license": "MIT",
   "homepage": "https://github.com/Brandons42/generator-starter-files.git",
   "author": {
     "name": "Brandon Suen",
