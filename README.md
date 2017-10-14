@@ -29,7 +29,7 @@ yo starter-files
 
  © Brandon Suen
 
-[Brandon Suen]: (https://brandons42.github.io/personal_website/)
+[Brandon Suen]: https://brandons42.github.io/personal_website/
 [npm-image]: https://badge.fury.io/js/generator-starter-files.svg
 [npm-url]: https://npmjs.org/package/generator-starter-files
 [travis-image]: https://travis-ci.org/brandons42/generator-starter-files.svg?branch=master
